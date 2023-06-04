@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<title>Три колонки с текстом</title>
+		<base href="image/">
+		<style>
+			caption, th, td{
+				border: 1px black solid;
+				padding: 10px;
+			}
+			
+			table{
+				margin-left: 100px;
+				border-collapse: collapse;
+				text-align:center;
+			}
+			h1, h3{ 
+				margin-left: 100px; 
+			}
+			
+			.gifurl{
+				padding: 30px; 
+				margin-left: 100px; 
+			}
+			
+			.image-request{
+				width: 570px;
+				height: 400px;
+				margin-left: 100px;
+				
+			}
+			
+			#refresh{
+				height: 30px;
+				width: 150px;
+				margin: 10px 50px 10px 0;
+			}
+		</style>
+	</head>
+	<body bgcolor = pink>
+		<table>
+		<caption><b>Список фильмов</b></caption>
+		<thead>
+			<tr>
+				<th>Постер</th><th>Название</th><th>Описание</th><th>Ссылка на Кинопоиске</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td><img src="last_samurai.jpg" alt="Последний самурай" width=250 height=350></td><td><big>Поcледний самурай</big></td>
+				<td><p>
+					Действие разворачивается в Японии 70-ых годов девятнадцатого века. Капитан Нейтон Альгрен, уважаемый американский военный офицер, нанят Императором Японии для обучения первой армии Страны Восходящего Солнца современному искусству ведения боевых действий.
+
+						Император пытается искоренить древних воинов-самураев, готовясь к более прозападной политике правительства…
+				</p></td>
+				<td><a href="https://www.kinopoisk.ru/film/6764/">Последний самурай на Кинопоиске</a></td>
+			</tr>
+			
+			<tr>
+				<td><img src="intern.jpg" alt="Стажёр" width=250 height=350></td><td><big>Стажёр</big></td>
+				<td><p>
+					70-летний вдовец Бен Уитакер обнаруживает, что выход на пенсию — еще не конец. Пользуясь случаем, он становится старшим стажером в интернет-магазине модной одежды под руководством Джулс Остин.
+				</p></td>
+				<td><a href="https://www.kinopoisk.ru/film/677893/">Стажёр на Кинопоиске</a></td>
+			</tr>
+			<tr>
+				<td><img src="wolfwalkers.jpg" alt="Легенда о волках" width=250 height=350></td><td><big>Легенда о волках</big></td>
+				<td><p>
+					Ирландия, 1650 год. Вокруг города Килкенни идёт вырубка лесов, участились случаи нападения волков, поэтому вызванному из Англии охотнику приказано истребить хищников. Несмотря на строгий запрет отца, дочь охотника Робин не может усидеть дома и, желая помочь, пробирается в лесную чащу, где сталкивается со странной девочкой Мейв. Вскоре с Робин произойдёт удивительное событие, благодаря чему она узнает много интересного об ирландских лесах и о самой себе.
+				</p></td>
+				<td><a href="https://www.kinopoisk.ru/film/958541/">Легенда о волках на Кинопоиске</a></td>
+			
+			</tr>			
+		</tbody>
+	</table>
+	
+	<div style="margin-left: 100px;">
+		<h1>Графа отзывов</h1>
+		
+		<div id="root2"></div>
+		<div id="root3"></div>
+		
+		<fieldset>
+		
+			<legend>Оцените каждый из фильмов от 1 до 10</legend>
+			<form method="post" action="http://localhost/inp/numb">
+				<p>
+					 Последний самурай <input style="margin-left: 100px;" type="number" min="1" max="10" step="1" value="5" name="numb" required>
+				</p>
+				<p>
+					Стажёр <input style="margin-left: 186px;" type="number" min="1" max="10" step="1" value="5" name="numb" required>
+				</p>
+				<p>
+					Легенда о волках <input style="margin-left: 120px;" type="number" min="1" max="10" step="1" value="5" name="numb" required>
+				</p>
+			</form>
+		</fieldset>
+
+		<br>
+		<fieldset>
+			<legend>Был ли како-нибудь фильм для вас новым?</legend>
+			<form method="post" action="http://localhost/inp/checkbox">
+				<p>
+					<input type="checkbox" id="last_samurai" name="csharp" checked> Последний самурай
+				</p>
+				<p>
+					<input type="checkbox" id="intern" name="sql" checked> Стажёр
+				</p>
+				<p>
+					<input type="checkbox" id="wolfwalkers" name="html5-css3"> Легенда о волках
+				</p>
+				<p>
+					<input type="checkbox" id="allwatched" name="javascript"> Нет, все смотрел
+				</p>
+				<p>
+					<input type="submit" value="Ввести">
+				</p>
+			</form>
+		</fieldset>
+		<br>
+		<fieldset>
+			<legend>Какой фильм вам понравлся больше всего?</legend>
+			<form method="post" action="http://localhost/inp/most_likable">
+				<p>
+					<input type="radio" value="last_samurai" name="subject"> Последний самурай
+				</p>
+				<p>
+					<input type="radio" value="intern" name="subject"> Стажёр
+				</p>
+				<p>
+					<input type="radio" value="wolfwalkers" name="subject" checked> Легенда о волках
+				</p>
+				<p>
+					<input type="submit" value="Ввести">
+				</p>
+			</form>
+		</fieldset>
+		<br>
+		<div id="root1"></div>
+		
+		<br>
+		<fieldset>
+			<legend>Оставьте ваш email, чтобы получить результаты голосования</legend>
+			<form method="post" action="http://localhost/inp/params">
+				<p>
+					<label for="email">Email: </label>
+					<input type="email" placeholder="user@gmail.com" id="email" name="email">
+				</p>
+				
+				<p>
+					<input type="submit" value="Ввести">
+				</p>
+			</form>
+		</fieldset>
+	</div>
+	
+	<div class="gifurl">
+		<h2>Если стало скучно, то вот вам котик:</h2>
+		<div class="image-request"></div>
+		
+	</div>
+	
+	<footer style="text-align: center;">
+		Изготовлено в рамках школы инженера Digital Design
+	</footer>
+	
+	
+	<script>
+		//Инициализируем элементы управления
+		var imageRequest = document.querySelector(".image-request");
+		
+		var request2 = new XMLHttpRequest();
+		let timeId = setInterval(gifRefresher, 3000);
+		
+		function handlerImageChange() {
+			var status = request2.status;
+
+			if (status == 200) {
+				var image = JSON.parse(request2.responseText);
+				imageRequest.innerHTML = '<p><img src='+image[0].url+' alt="котик"></p>'
+			} else {
+				imageRequest.innerHTML += '<div><b>'+ request2.statusText + '</b></div>'
+			}
+		
+		}
+		
+		function gifRefresher(){
+			request2.onload = handlerImageChange;								
+			
+			request2.open("GET", "https://api.thecatapi.com/v1/images/search?mime_types=gif", true);
+			request2.send();
+		}
+		
+	</script>
+	<script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+	<script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.25.0/babel.min.js"></script>		 
+	<script type="text/babel">
+	
+		class TextComponent extends React.Component {
+			constructor(props){
+				super(props);
+				
+				this.state = { value: '' };
+				
+				this.textareaSubmit = this.textareaSubmit.bind(this);
+				this.textareaChange = this.textareaChange.bind(this);
+			}
+			
+			textareaSubmit(event){
+			
+				alert('Вы ввели: ' + this.state.value);
+				event.preventDefault();
+			}
+			
+			textareaChange(event){
+					this.setState({ value: event.target.value });	
+				}
+		
+			render() {
+				return (
+					<div className='managed'>
+						<h1>Напишите подробный отзыв о каждом фильме</h1>
+						<form onSubmit={this.textareaSubmit} onChange={this.textareaChange}>
+							<label>
+								<textarea value={this.state.value} name="response" cols="100" rows="20" placeholder="Введите текст (не более 5000 символов)" maxlength="5000"></textarea> 
+							</label>
+							<input type="submit" value="Отправить" />								
+						</form>
+					</div>
+				);
+			}
+		}
+		
+		function ListWithKey(props){
+				const listItems= this.state.map((checkbox, key) => 
+					<li key={checkbox.id}>{checkbox.value}</li>
+				);
+				return (
+					<ol>{listItems}</ol>
+				)
+			}
+		
+		ReactDOM.render(<TextComponent />, document.getElementById("root1"));
+		
+		class CheckboxComponent extends React.Component {
+			constructor(props){
+				super(props);
+				this.state = [{ id: 0, value: false }, { id: 0, value: false }, { id: 0, value: false }];
+				this.checkboxChange = this.checkboxChange.bind(this);
+				this.checkboxSubmit = this.checkboxSubmit.bind(this);
+			}
+			
+			checkboxChange(event){
+				this.state[event.target.id] = {id:event.target.id, value: !this.state[event.target.id].value };
+			}
+			
+			checkboxSubmit(event){
+				let arr =[];
+				arr = this.state.map((checkbox) => arr.push(checkbox.value))
+				alert([this.state[0].value, 
+					   this.state[1].value,
+					   this.state[2].value].join(', '));
+				event.preventDefault();
+			}
+			
+			render() {
+				return (
+					<div className='managed'>
+						<h1>Нажмите галочку</h1>
+						<form onSubmit={this.checkboxSubmit}>
+							<label>
+								<input id = "1" onChange = {this.checkboxChange} type="checkbox" checked={this.state[0].value} name="responseCheckbox" />
+								<input id = "2" onChange = {this.checkboxChange} type="checkbox" checked={this.state[1].value} name="responseCheckbox" />
+								<input id = "3" onChange = {this.checkboxChange} type="checkbox" checked={this.state[2].value} name="responseCheckbox" />
+							</label>
+							<input type="submit" value="Отправить" />								
+						</form>
+					</div>
+				);
+			}
+			
+		
+		}
+		ReactDOM.render(<CheckboxComponent />, document.getElementById("root2"));
+	
+	</script>
+	
+	</body>
+</html>
